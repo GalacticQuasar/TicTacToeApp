@@ -5,13 +5,6 @@ import tkinter as tk
 from PIL import Image, ImageTk
 
 
-def get_path(filename):
-    if hasattr(sys, "_MEIPASS"):
-        return os.path.join(sys._MEIPASS, filename)
-    else:
-        return filename
-
-
 def player_turn(reverse=None) -> str:
     global x_turn
 
@@ -146,7 +139,7 @@ x_turn = True
 window = tk.Tk()
 window.title("TicTacToe - AR")
 window.configure(bg="teal", borderwidth=25, relief="groove")
-window.iconbitmap(get_path("TicTacToeXAndOImage.ico"))
+window.iconbitmap("TicTacToeXAndOImage.ico")
 
 # GAME FRAME INITIALIZATION
 frame1 = tk.Frame()
@@ -159,8 +152,8 @@ for row in range(3):
         buttons[row][col] = tk.Button(master=frame1, text=" ", bg="black", fg="white", relief="raised", border=5, command=lambda row=row, col=col: update_button_status(row, col))
         buttons[row][col].grid(row=row, column=col, sticky="nsew")
 
-button_x_image = ImageTk.PhotoImage(Image.open(get_path("x_image.png")).resize((50, 50)))
-button_o_image = ImageTk.PhotoImage(Image.open(get_path("o_image.png")).resize((50, 50)))
+button_x_image = ImageTk.PhotoImage(Image.open("x_image.png").resize((50, 50)))
+button_o_image = ImageTk.PhotoImage(Image.open("o_image.png").resize((50, 50)))
 
 # MESSAGE TEXT (UNDER)
 frame2 = tk.Frame(borderwidth=15, relief="raised", bg="teal")
