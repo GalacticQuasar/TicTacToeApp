@@ -129,7 +129,8 @@ def tie_condition() -> bool:
 def idle_message():
     game_message["text"] = "EY EY EY LOOKIE HERE"
 
-buttons = [[None]*3 for x in range(3)]
+
+buttons = [[None] * 3 for x in range(3)]
 x_turn = True
 
 window = tk.Tk()
@@ -145,7 +146,8 @@ frame1.pack()
 
 for row in range(3):
     for col in range(3):
-        buttons[row][col] = tk.Button(master=frame1, text=" ", bg="black", fg="white", relief="raised", border=5, command=lambda row=row, col=col: update_button_status(row, col))
+        buttons[row][col] = tk.Button(master=frame1, text=" ", bg="black", fg="white", relief="raised", border=5,
+                                      command=lambda row=row, col=col: update_button_status(row, col))
         buttons[row][col].grid(row=row, column=col, sticky="nsew")
 
 button_x_image = ImageTk.PhotoImage(Image.open("x_image.png").resize((50, 50)))
@@ -155,7 +157,8 @@ button_o_image = ImageTk.PhotoImage(Image.open("o_image.png").resize((50, 50)))
 frame2 = tk.Frame(borderwidth=15, relief="raised", bg="teal")
 frame2.pack()
 
-game_message = tk.Label(master=frame2, text="Click a square to begin", font="georgia", width=25, bg="teal", relief="solid")
+game_message = tk.Label(master=frame2, text="Click a square to begin", font="georgia", width=25, bg="teal",
+                        relief="solid")
 game_message.pack()
 
 play_again = tk.Button(text="Play again?", command=restart, width=8, bg="black", fg="white", relief="raised", border=3)
