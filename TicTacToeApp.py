@@ -1,5 +1,4 @@
 import tkinter as tk
-
 from PIL import Image, ImageTk
 
 
@@ -129,7 +128,6 @@ def tie_condition() -> bool:
 
 def idle_message():
     game_message["text"] = "EY EY EY LOOKIE HERE"
-
 
 buttons = [[None]*3 for x in range(3)]
 x_turn = True
